@@ -1,4 +1,4 @@
-# host
+# Host app
 
 # Installation 
 

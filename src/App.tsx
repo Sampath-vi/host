@@ -1,21 +1,20 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom";
-import Counter from 'remote/counter';
-import Health from 'remote/health';
-import AddNewPost from 'remote/post';
-
+const Counter = lazy(() => import('remote/counter'));
+const Health = lazy(() => import('remote/health'));
+import NewPost from "./newPost";
 import "./index.css";
+import { Spin } from 'antd';
+import "antd/dist/antd.css";
+
 
 const App = () => (
-  <div className="container">
-    <Counter additionalCount={5} />
-    <Health />
-    <AddNewPost
-      onClick={(e) => {}}
-      onChange={(title, body) => {
-        console.log(title, body);
-      }}
-    />
-  </div>
+  <Suspense fallback={<Spin />}>
+    <div className="container">
+      <Counter additionalCount={5} />
+      <Health />
+      <NewPost />
+    </div >
+  </Suspense>
 );
 ReactDOM.render(<App />, document.getElementById("app"));

@@ -17,3 +17,7 @@
 - The `remote` url and the exposed file `remoteEntry.js` is being added as a remote for the host app to access the remote resources. 
 - Imports inside the app are being mapped to the key in `webpack.config.js` [App.tsx](https://github.com/Sampath-vi/host/blob/master/src/App.tsx#L3) 
 - More on Module Federation - [module-federation](https://webpack.js.org/concepts/module-federation/)
+
+# Remote
+
+[Remote App](https://github.com/Sampath-vi/remote)
